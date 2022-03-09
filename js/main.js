@@ -53,6 +53,7 @@ async function renderFods() {
 }
 
 async function renderOrders(userId) {
+    if(!userId) return
     let {orders} = await request(ORDERS_QUERY, {userId})
     orders = orders.reverse()
 
